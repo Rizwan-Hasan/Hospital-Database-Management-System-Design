@@ -2,6 +2,7 @@
 
 import os
 import sys
+import resources
 
 # My Imports
 from OracleDBConnection import OracleConn
@@ -24,17 +25,45 @@ class MainWindow(QMainWindow):
     MyDb = OracleConn()
 
     def __init__(self):
-        super(MainWindow, self).__init__()
+        # noinspection PyArgumentList
+        super().__init__()
 
         # Loading Main UI Design Files ↓
         uic.loadUi(appFolder + 'ui\\MainWindow.ui', self)
 
-        self.MyDb.connect()
+        # Icon Variables
+        self.icon = QIcon(':/icon/icon.png')
 
+        self.MyDb.connect()
         self.mainWindow()
 
+    def makeWindowCenter(self):
+        # For launching windows in center
+        qtRectangle = self.frameGeometry()
+        centerPoint = QDesktopWidget().availableGeometry().center()
+        qtRectangle.moveCenter(centerPoint)
+        self.move(qtRectangle.topLeft())
+
+    def closeEvent(self, event):
+        try:
+            # noinspection PyCallByClass
+            buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
+                                               QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if buttonReply == QMessageBox.Yes:
+                print('Exitted')
+                event.accept()
+            else:
+                event.ignore()
+            self.show()
+        except AttributeError:
+            pass
+
+        # Other User Interface Function ↓
+
     def mainWindow(self):
+        self.makeWindowCenter()
         self.setWindowTitle("Hospital Patient Management System")
+        self.setWindowIcon(self.icon)
 
         tableOperation = TableOperation(appFolder, self.MyDb.getCursor())
 
