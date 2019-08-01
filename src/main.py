@@ -65,13 +65,13 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Hospital Patient Management System")
         self.setWindowIcon(self.icon)
 
-        # tableOperation = TableOperation(appFolder, self.MyDb.getCursor())
-        # tableOperation.create()
+        tableOperation = TableOperation(appFolder, self.MyDb)
+        tableOperation.create()
         # tableOperation.drop()
 
-        mycursor = self.MyDb.execute("show databases")
-        for i in mycursor:
-            print(i)
+        # mycursor = self.MyDb.execute("show databases")
+        # for i in mycursor:
+        #     print(i)
 
         self.MyDb.close()
 

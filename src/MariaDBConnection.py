@@ -20,8 +20,17 @@ class OracleConn:
                 user=self.__username,
                 passwd=self.__password)
             print("Connection successfull")
-        except ValueError:
-            print("Connection unsuccessfull")
+        except mariadb.errors.ProgrammingError:
+            try:
+                self.__connection = mariadb.connect(
+                    host=self.__server,
+                    port=self.__port,
+                    # database=self.__database,
+                    user=self.__username,
+                    passwd=self.__password)
+                print("Connection successfull")
+            except mariadb.errors.ProgrammingError:
+                print("Connection unsuccessfull")
 
     def getConnection(self):
         return self.__connection

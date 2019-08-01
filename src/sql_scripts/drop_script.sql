@@ -1,22 +1,2 @@
-/*
- Dropping Constraints
- */
-ALTER TABLE Patient
-    DROP CONSTRAINT FK_ref_id_PATIENT;
-
-ALTER TABLE Procedure
-    DROP CONSTRAINT FK_ref_id_PROCEDURE;
-
-ALTER TABLE Bill
-    DROP CONSTRAINT FK_procedure_id_BILL;
-
-ALTER TABLE Bill
-    DROP CONSTRAINT FK_patient_id_BILL;
-
-/*
- Dropping Tables
- */
-DROP TABLE REFERRAL;
-DROP TABLE PROCEDURE;
-DROP TABLE PATIENT;
-DROP TABLE BILL;
+/* Dropping Database */
+DROP DATABASE IF EXISTS HospitalDB;
