@@ -6,14 +6,330 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>873</width>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>181</width>
+     <height>188</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="Referral_Table">
+    <item>
+     <widget class="QLabel" name="Referral_Label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Referral Table&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QLineEdit" name="lineEdit_doctor">
+        <property name="placeholderText">
+         <string>Doctor's name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPlainTextEdit" name="plainTextEdit_deatils">
+        <property name="placeholderText">
+         <string>Doctor's details</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="pushBtn_ref_insert">
+          <property name="text">
+           <string>Insert</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushBtn_ref_update">
+          <property name="text">
+           <string>Update</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushBtn_ref_clear">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,1">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_ref_id">
+          <property name="placeholderText">
+           <string>Referral ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>50</y>
+     <width>191</width>
+     <height>187</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="Patient_Table">
+    <item>
+     <widget class="QLabel" name="Patient_Table_2">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Patient Table&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_patient_id">
+        <property name="placeholderText">
+         <string>Patient ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_p_ref_id">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Referral ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_patient_name">
+      <property name="placeholderText">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_sex">
+      <property name="placeholderText">
+       <string>Sex</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_address">
+      <property name="placeholderText">
+       <string>Address</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="pushBtn_ref_insert_2">
+        <property name="text">
+         <string>Insert</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_ref_update_2">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_ref_clear_2">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
- <connections/>
+ <resources>
+  <include location="../icons/resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushBtn_ref_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>plainTextEdit_deatils</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_doctor</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>205</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_ref_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_patient_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_p_ref_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_patient_name</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_sex</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>439</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_ref_clear_2</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_address</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
