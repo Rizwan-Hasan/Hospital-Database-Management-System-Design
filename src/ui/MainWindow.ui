@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>HospitalDbForm</class>
+ <widget class="QWidget" name="HospitalDbForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,16 +17,16 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>40</y>
-     <width>181</width>
-     <height>188</height>
+     <y>20</y>
+     <width>243</width>
+     <height>190</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="Referral_Table">
     <item>
      <widget class="QLabel" name="Referral_Label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Referral Table&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#3a3a3a;&quot;&gt;Add New Referral&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
@@ -87,7 +87,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="pushBtn_ref_delete">
           <property name="text">
            <string>Delete</string>
           </property>
@@ -105,17 +105,20 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>50</y>
-     <width>191</width>
-     <height>187</height>
+     <x>280</x>
+     <y>20</y>
+     <width>241</width>
+     <height>189</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="Patient_Table">
+   <layout class="QVBoxLayout" name="PatientTable">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
     <item>
      <widget class="QLabel" name="Patient_Table_2">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Patient Table&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#3a3a3a;&quot;&gt;Add New Patient&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
@@ -129,7 +132,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="pushBtn_patient_delete">
         <property name="text">
          <string>Delete</string>
         </property>
@@ -174,21 +177,220 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QPushButton" name="pushBtn_ref_insert_2">
+       <widget class="QPushButton" name="pushBtn_patient_insert">
         <property name="text">
          <string>Insert</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushBtn_ref_update_2">
+       <widget class="QPushButton" name="pushBtn_patient_update">
         <property name="text">
          <string>Update</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushBtn_ref_clear_2">
+       <widget class="QPushButton" name="pushBtn_patient_clear">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>20</y>
+     <width>241</width>
+     <height>189</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="ProcedureTable">
+    <item>
+     <widget class="QLabel" name="Procedure_Label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#3a3a3a;&quot;&gt;Add New Procedure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_procedure_id">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Procedure ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_proc_delete">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_procedure_ref_id">
+      <property name="placeholderText">
+       <string>Referral ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_procedure_p_id">
+      <property name="placeholderText">
+       <string>Patient ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_procedure_cost">
+      <property name="placeholderText">
+       <string>Procedure cost</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_procedure_result">
+      <property name="placeholderText">
+       <string>Result</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="pushBtn_proc_insert">
+        <property name="text">
+         <string>Insert</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_proc_update">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_proc_clear">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>260</y>
+     <width>191</width>
+     <height>215</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="BillTable">
+    <item>
+     <widget class="QLabel" name="Bill_Label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#3a3a3a;&quot;&gt;Add New Bill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_bill_id">
+        <property name="placeholderText">
+         <string>Bill ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_bill_delete">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_bill_proc_id">
+      <property name="placeholderText">
+       <string>Procedure ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_bill_ref_id">
+      <property name="placeholderText">
+       <string>Referral ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_bill_patient_id">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Patient ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_bill_cost">
+      <property name="placeholderText">
+       <string>Total cost</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_bill_date">
+      <property name="placeholderText">
+       <string>Bill date [Format: 24-FEB-19]</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QPushButton" name="pushBtn_bill_insert">
+        <property name="text">
+         <string>Insert</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_bill_update">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushBtn_bill_clear">
         <property name="text">
          <string>Clear</string>
         </property>
@@ -210,12 +412,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>176</x>
-     <y>214</y>
+     <x>196</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
      <x>130</x>
-     <y>182</y>
+     <y>162</y>
     </hint>
    </hints>
   </connection>
@@ -226,12 +428,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>156</x>
-     <y>205</y>
+     <x>197</x>
+     <y>187</y>
     </hint>
     <hint type="destinationlabel">
      <x>146</x>
-     <y>106</y>
+     <y>86</y>
     </hint>
    </hints>
   </connection>
@@ -242,92 +444,268 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>208</y>
+     <x>193</x>
+     <y>190</y>
     </hint>
     <hint type="destinationlabel">
      <x>112</x>
-     <y>73</y>
+     <y>53</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushBtn_ref_clear_2</sender>
+   <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_patient_id</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>434</x>
-     <y>221</y>
+     <x>467</x>
+     <y>191</y>
     </hint>
     <hint type="destinationlabel">
      <x>310</x>
-     <y>91</y>
+     <y>61</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushBtn_ref_clear_2</sender>
+   <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_p_ref_id</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>450</x>
-     <y>223</y>
+     <x>483</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
      <x>443</x>
-     <y>119</y>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushBtn_ref_clear_2</sender>
+   <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_patient_name</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>412</x>
-     <y>230</y>
+     <x>445</x>
+     <y>200</y>
     </hint>
     <hint type="destinationlabel">
      <x>335</x>
-     <y>147</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushBtn_ref_clear_2</sender>
+   <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_sex</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>453</x>
-     <y>221</y>
+     <x>486</x>
+     <y>191</y>
     </hint>
     <hint type="destinationlabel">
      <x>439</x>
-     <y>172</y>
+     <y>142</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushBtn_ref_clear_2</sender>
+   <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_address</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>455</x>
-     <y>221</y>
+     <x>488</x>
+     <y>191</y>
     </hint>
     <hint type="destinationlabel">
      <x>453</x>
-     <y>198</y>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_proc_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_procedure_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>738</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_proc_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_procedure_ref_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>763</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>714</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_proc_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_procedure_p_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>730</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_proc_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_procedure_cost</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>721</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>687</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_proc_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_procedure_result</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>743</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>467</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_patient_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>492</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_date</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>458</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>93</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_cost</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>480</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_ref_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>503</x>
+     <y>468</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtn_bill_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_bill_proc_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>463</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>314</y>
     </hint>
    </hints>
   </connection>
