@@ -1,35 +1,36 @@
+import json
+
 import mysql.connector as mariadb
 
 
 class OracleConn:
-    __username: str = 'rizwan'
-    __password: str = '01733938633'
-    __server: str = 'localhost'
-    __port: int = 3306
-    __database: str = 'hospitaldb'
 
-    def __init__(self):
+    def __init__(self, appFolder: str):
         self.__connection = None
+        with open(appFolder + 'DbConfig.json', 'r', encoding='utf-8') as file:
+            self.dbConfig: dict = json.load(file)
 
     def connect(self):
         try:
             self.__connection = mariadb.connect(
-                host=self.__server,
-                port=self.__port,
-                database=self.__database,
-                user=self.__username,
-                passwd=self.__password)
+                host=self.dbConfig.get('host'),
+                port=self.dbConfig.get('port'),
+                database=self.dbConfig.get('database'),
+                user=self.dbConfig.get('username'),
+                passwd=self.dbConfig.get('password')
+            )
             print("Connection successfull")
-        except mariadb.errors.ProgrammingError:
+        except:
             try:
                 self.__connection = mariadb.connect(
-                    host=self.__server,
-                    port=self.__port,
-                    # database=self.__database,
-                    user=self.__username,
-                    passwd=self.__password)
+                    host=self.dbConfig.get('host'),
+                    port=self.dbConfig.get('port'),
+                    # database=self.dbConfig.get('database'),
+                    user=self.dbConfig.get('username'),
+                    passwd=self.dbConfig.get('password')
+                )
                 print("Connection successfull")
-            except mariadb.errors.ProgrammingError:
+            except:
                 print("Connection unsuccessfull")
 
     def getConnection(self):
@@ -44,4 +45,8 @@ class OracleConn:
             return -1
 
     def close(self):
-        self.__connection.close()
+        try:
+            self.__connection.close()
+            print("Close operation is successfull")
+        except AttributeError:
+            print("Close operation isn't successfull")

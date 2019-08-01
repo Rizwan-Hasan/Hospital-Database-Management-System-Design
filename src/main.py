@@ -5,8 +5,8 @@ import sys
 import resources
 
 # My Imports
-from MariaDBConnection import OracleConn
-from TableCreateDrop import TableOperation
+from MariaDbConnection import OracleConn
+from DatabaseCreateDrop import TableOperation
 
 # PyQt5 Imports
 import PyQt5
@@ -22,7 +22,7 @@ appFolder = os.path.dirname(os.path.realpath(sys.argv[0])) + "\\"
 
 
 class MainWindow(QMainWindow):
-    MyDb = OracleConn()
+    MyDb = OracleConn(appFolder)
 
     def __init__(self):
         # noinspection PyArgumentList
@@ -65,10 +65,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Hospital Patient Management System")
         self.setWindowIcon(self.icon)
 
-        tableOperation = TableOperation(appFolder, self.MyDb)
-        tableOperation.create()
+        # tableOperation = TableOperation(appFolder, self.MyDb)
+        # tableOperation.create()
         # tableOperation.drop()
-
         # mycursor = self.MyDb.execute("show databases")
         # for i in mycursor:
         #     print(i)
