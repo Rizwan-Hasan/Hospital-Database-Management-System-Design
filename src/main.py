@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         # noinspection PyArgumentList
-        super().__init__()
+        super(MainWindow, self).__init__()
 
         # Loading Main UI Design Files ↓
         uic.loadUi(appFolder + 'ui\\MainWindow.ui', self)

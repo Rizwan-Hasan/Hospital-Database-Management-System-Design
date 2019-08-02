@@ -55,7 +55,7 @@
      <x>10</x>
      <y>10</y>
      <width>521</width>
-     <height>452</height>
+     <height>456</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="Tables">
@@ -99,6 +99,10 @@
          <widget class="QPushButton" name="pushBtn_patient_delete">
           <property name="text">
            <string>Delete</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/delete/delete.png</normaloff>:/delete/delete.png</iconset>
           </property>
           <property name="flat">
            <bool>false</bool>
@@ -145,6 +149,10 @@
           <property name="text">
            <string>Insert</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/insert/insert.png</normaloff>:/insert/insert.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
@@ -152,12 +160,20 @@
           <property name="text">
            <string>Update</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/update/update.png</normaloff>:/update/update.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushBtn_patient_clear">
           <property name="text">
            <string>Clear</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/clear/clear.png</normaloff>:/clear/clear.png</iconset>
           </property>
          </widget>
         </item>
@@ -190,6 +206,10 @@
          <widget class="QPushButton" name="pushBtn_proc_delete">
           <property name="text">
            <string>Delete</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/delete/delete.png</normaloff>:/delete/delete.png</iconset>
           </property>
           <property name="flat">
            <bool>false</bool>
@@ -233,6 +253,10 @@
           <property name="text">
            <string>Insert</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/insert/insert.png</normaloff>:/insert/insert.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
@@ -240,12 +264,20 @@
           <property name="text">
            <string>Update</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/update/update.png</normaloff>:/update/update.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushBtn_proc_clear">
           <property name="text">
            <string>Clear</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/clear/clear.png</normaloff>:/clear/clear.png</iconset>
           </property>
          </widget>
         </item>
@@ -288,6 +320,10 @@
             <property name="text">
              <string>Insert</string>
             </property>
+            <property name="icon">
+             <iconset resource="../icons/resources.qrc">
+              <normaloff>:/insert/insert.png</normaloff>:/insert/insert.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
@@ -295,12 +331,20 @@
             <property name="text">
              <string>Update</string>
             </property>
+            <property name="icon">
+             <iconset resource="../icons/resources.qrc">
+              <normaloff>:/update/update.png</normaloff>:/update/update.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="pushBtn_ref_clear">
             <property name="text">
              <string>Clear</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../icons/resources.qrc">
+              <normaloff>:/clear/clear.png</normaloff>:/clear/clear.png</iconset>
             </property>
            </widget>
           </item>
@@ -325,6 +369,10 @@
            <widget class="QPushButton" name="pushBtn_ref_delete">
             <property name="text">
              <string>Delete</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../icons/resources.qrc">
+              <normaloff>:/delete/delete.png</normaloff>:/delete/delete.png</iconset>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -359,6 +407,10 @@
          <widget class="QPushButton" name="pushBtn_bill_delete">
           <property name="text">
            <string>Delete</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/delete/delete.png</normaloff>:/delete/delete.png</iconset>
           </property>
           <property name="flat">
            <bool>false</bool>
@@ -412,6 +464,10 @@
           <property name="text">
            <string>Insert</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/insert/insert.png</normaloff>:/insert/insert.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
@@ -419,12 +475,20 @@
           <property name="text">
            <string>Update</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/update/update.png</normaloff>:/update/update.png</iconset>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushBtn_bill_clear">
           <property name="text">
            <string>Clear</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons/resources.qrc">
+            <normaloff>:/clear/clear.png</normaloff>:/clear/clear.png</iconset>
           </property>
          </widget>
         </item>

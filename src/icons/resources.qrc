@@ -2,4 +2,16 @@
   <qresource prefix="icon">
     <file>icon.png</file>
   </qresource>
+  <qresource prefix="insert">
+    <file>insert.png</file>
+  </qresource>
+  <qresource prefix="update">
+    <file>update.png</file>
+  </qresource>
+  <qresource prefix="delete">
+    <file>delete.png</file>
+  </qresource>
+  <qresource prefix="clear">
+    <file>clear.png</file>
+  </qresource>
 </RCC>
