@@ -31,12 +31,17 @@ class MainWindow(QMainWindow):
         # Loading Main UI Design Files ↓
         uic.loadUi(appFolder + 'ui\\MainWindow.ui', self)
 
+        # Stylesheet
+        with open(appFolder + 'ui\\stylesheet.qss', 'r') as styleSheetFile:
+            self.setStyleSheet(styleSheetFile.read())
+
         # Variables
         self.icon = QIcon(':/icon/icon.png')
         self.MyDb.connect()
         self.mainWindow()
 
     def showMsg(self, message: str):
+        self.statusBar().styleSheet()
         self.statusBar().showMessage(message)
 
     def makeWindowCenter(self):

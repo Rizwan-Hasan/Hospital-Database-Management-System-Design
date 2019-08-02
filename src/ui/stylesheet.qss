@@ -1,0 +1,6 @@
+/*noinspection CssInvalidPropertyValue*/
+QStatusBar {
+    min-height: 23px;
+    background-color: None;
+    font: 14px;
+}
