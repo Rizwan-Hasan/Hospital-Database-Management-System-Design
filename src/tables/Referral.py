@@ -6,7 +6,8 @@ class Operations:
 
     def insert(self, ref_id: str, docName: str, docDetails: str):
         try:
-            sql: str = "INSERT INTO referral (ref_id, doctor, details) VALUES (%s, %s, %s)"
+            sql: str = "INSERT INTO referral (ref_id, doctor, details) " \
+                       "VALUES (%s, %s, %s)"
             val: tuple = (ref_id, docName, docDetails)
             self.__cursor.execute(sql, val)
             self.__connection.commit()
@@ -31,7 +32,7 @@ class Operations:
             self.__cursor.execute(sql)
             self.__connection.commit()
             self.__message = 'Row deletion successfull in Referral Table.'
-        except KeyboardInterrupt:
+        except:
             self.__message = 'Row deletion unsuccessfull in Referral Table.'
 
     def getStatus(self):

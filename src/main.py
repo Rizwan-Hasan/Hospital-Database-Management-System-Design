@@ -5,7 +5,7 @@ import sys
 import resources
 
 # My Imports
-from tables import Referral
+from tables import Referral, Patient
 from MariaDbConnection import MariaDbConn
 from DatabaseCreateDrop import TableOperation
 
@@ -52,19 +52,19 @@ class MainWindow(QMainWindow):
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
 
-    def closeEvent(self, event):
-        try:
-            # noinspection PyCallByClass
-            buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
-                                               QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-            if buttonReply == QMessageBox.Yes:
-                print('Exitted')
-                event.accept()
-            else:
-                event.ignore()
-            self.show()
-        except AttributeError:
-            pass
+    # def closeEvent(self, event):
+    #     try:
+    #         # noinspection PyCallByClass
+    #         buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
+    #                                            QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+    #         if buttonReply == QMessageBox.Yes:
+    #             print('Exitted')
+    #             event.accept()
+    #         else:
+    #             event.ignore()
+    #         self.show()
+    #     except AttributeError:
+    #         pass
 
     def mainWindow(self):
         self.makeWindowCenter()
@@ -78,8 +78,8 @@ class MainWindow(QMainWindow):
         # for i in mycursor:
         #     print(i)
 
-        x = Referral.Operations(db=self.MyDb)
-        x.delete("500")
+        x = Patient.Operations(db=self.MyDb)
+        x.delete("201")
         self.showStatus(x.getStatus())
 
         self.MyDb.close()
