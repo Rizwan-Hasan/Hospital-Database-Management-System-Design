@@ -31,11 +31,13 @@ class MainWindow(QMainWindow):
         # Loading Main UI Design Files ↓
         uic.loadUi(appFolder + 'ui\\MainWindow.ui', self)
 
-        # Icon Variables
+        # Variables
         self.icon = QIcon(':/icon/icon.png')
-
         self.MyDb.connect()
         self.mainWindow()
+
+    def showMsg(self, message: str):
+        self.statusBar().showMessage(message)
 
     def makeWindowCenter(self):
         # For launching windows in center
@@ -61,7 +63,7 @@ class MainWindow(QMainWindow):
     def mainWindow(self):
         self.makeWindowCenter()
         self.setWindowTitle("Hospital Patient Management System")
-        self.setWindowIcon(self.icon)
+        self.showMsg("Developed by Rizwan Hasan using Python and PyQt5")
 
         # tableOperation = TableOperation(appFolder, self.MyDb)
         # tableOperation.create()
@@ -69,7 +71,6 @@ class MainWindow(QMainWindow):
         # mycursor = self.MyDb.execute("show databases")
         # for i in mycursor:
         #     print(i)
-
         self.MyDb.close()
 
 
