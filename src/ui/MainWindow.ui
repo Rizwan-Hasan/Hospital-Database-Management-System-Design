@@ -82,7 +82,7 @@
       <item>
        <widget class="QLabel" name="Patient_Table_2">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#021e6b;&quot;&gt;Add New Patient&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#021e6b;&quot;&gt;Patient&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -186,7 +186,7 @@
       <item>
        <widget class="QLabel" name="Procedure_Label">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#666b04;&quot;&gt;Add New Procedure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#666b04;&quot;&gt;Procedure&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -293,7 +293,7 @@
       <item>
        <widget class="QLabel" name="Referral_Label">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#6b1c05;&quot;&gt;Add New Referral&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#6b1c05;&quot;&gt;Referral&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -390,7 +390,7 @@
       <item>
        <widget class="QLabel" name="Bill_Label">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#0a6b05;&quot;&gt;Add New Bill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; font-weight:600; font-style:italic; color:#0a6b05;&quot;&gt;Bill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>

@@ -2,6 +2,18 @@
   <qresource prefix="icon">
     <file>icon.png</file>
   </qresource>
+  <qresource prefix="referral">
+    <file>referral.png</file>
+  </qresource>
+  <qresource prefix="patient">
+    <file>patient.png</file>
+  </qresource>
+  <qresource prefix="procedure">
+    <file>procedure.png</file>
+  </qresource>
+  <qresource prefix="bill">
+    <file>bill.png</file>
+  </qresource>
   <qresource prefix="insert">
     <file>insert.png</file>
   </qresource>
