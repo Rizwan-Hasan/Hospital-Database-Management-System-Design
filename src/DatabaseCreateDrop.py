@@ -11,7 +11,8 @@ class TableOperation:
                     # print(query)
                     self.cursor.execute(query)
             print("Table creation successful")
-        except:
+        except Exception as e:
+            print(e)
             print("Table creation error")
 
     def drop(self):
@@ -21,5 +22,6 @@ class TableOperation:
                     # print(query)
                     self.cursor.execute(query)
             print("Table dropping successfull")
-        except:
+        except Exception as e:
+            print(e)
             print("Table dropping error")

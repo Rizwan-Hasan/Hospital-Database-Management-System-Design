@@ -2,10 +2,11 @@
 
 import os
 import sys
+# noinspection PyUnresolvedReferences
 import resources
 
 # My Imports
-from tables import Referral, Patient
+from tables import Referral, Patient, Procedure, Bill
 from MariaDbConnection import MariaDbConn
 from DatabaseCreateDrop import TableOperation
 
@@ -14,7 +15,7 @@ import PyQt5
 from PyQt5 import uic
 from PyQt5 import QtGui
 from PyQt5.QtGui import QIcon, QFont, QPixmap, QMovie
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage, QStyleFactory
 from PyQt5.QtWidgets import QFileDialog, QDesktopWidget, QTextEdit
 from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread
 
@@ -78,8 +79,8 @@ class MainWindow(QMainWindow):
         # for i in mycursor:
         #     print(i)
 
-        x = Patient.Operations(db=self.MyDb)
-        x.delete("201")
+        x = Bill.Operations(db=self.MyDb)
+        x.update("601", "309", "203", "100", "1600", "2019-04-21")
         self.showStatus(x.getStatus())
 
         self.MyDb.close()
@@ -88,6 +89,7 @@ class MainWindow(QMainWindow):
 # Main Function ↓
 def main():
     app = QApplication(sys.argv)
+    app.setStyle(QStyleFactory.create('Fusion'))
     mainWindow = MainWindow()
     mainWindow.show()
     sys.exit(app.exec_())

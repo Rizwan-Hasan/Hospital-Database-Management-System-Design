@@ -12,8 +12,9 @@ class Operations:
             self.__cursor.execute(sql, val)
             self.__connection.commit()
             self.__message = 'Row insertion successfull in Patient Table.'
-        except:
-            self.__message = 'Row insertion unsuccessfull in Patient Table.'
+        except Exception as e:
+            print(e)
+            self.__message = 'Row updation unsuccessfull in Procedure Table.'
 
     def update(self, patient_id: str, ref_id: str, name: str, sex: str, addr: str):
         try:
@@ -24,8 +25,9 @@ class Operations:
             self.__cursor.execute(sql)
             self.__connection.commit()
             self.__message = 'Row updation successfull in Patient Table.'
-        except:
-            self.__message = 'Row updation unsuccessfull in Patient Table.'
+        except Exception as e:
+            print(e)
+            self.__message = 'Row updation unsuccessfull in Procedure Table.'
 
     def delete(self, patient_id: str):
         try:
@@ -34,8 +36,9 @@ class Operations:
             self.__cursor.execute(sql)
             self.__connection.commit()
             self.__message = 'Row deletion successfull in Patient Table.'
-        except:
-            self.__message = 'Row deletion unsuccessfull in Patient Table.'
+        except Exception as e:
+            print(e)
+            self.__message = 'Row updation unsuccessfull in Procedure Table.'
 
     def getStatus(self):
         return self.__message

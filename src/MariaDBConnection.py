@@ -20,7 +20,8 @@ class MariaDbConn:
                 passwd=self.dbConfig.get('password')
             )
             print("Connection successfull")
-        except:
+        except Exception as e:
+            print(e)
             try:
                 self.__connection = mariadb.connect(
                     host=self.dbConfig.get('host'),
@@ -30,7 +31,8 @@ class MariaDbConn:
                     passwd=self.dbConfig.get('password')
                 )
                 print("Connection successfull")
-            except:
+            except Exception as e:
+                print(e)
                 print("Connection unsuccessfull")
 
     def getConnection(self):
@@ -45,5 +47,6 @@ class MariaDbConn:
         try:
             self.__connection.close()
             print("Close operation is successfull")
-        except AttributeError:
+        except Exception as e:
+            print(e)
             print("Close operation isn't successfull")

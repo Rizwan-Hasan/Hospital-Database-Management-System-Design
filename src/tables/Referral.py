@@ -12,7 +12,8 @@ class Operations:
             self.__cursor.execute(sql, val)
             self.__connection.commit()
             self.__message = 'Row insertion successfull in Referral Table.'
-        except:
+        except Exception as e:
+            print(e)
             self.__message = 'Row insertion unsuccessfull in Referral Table.'
 
     def update(self, ref_id: str, docName: str, docDetails: str):
@@ -22,7 +23,8 @@ class Operations:
             self.__cursor.execute(sql)
             self.__connection.commit()
             self.__message = 'Row updation successfull in Referral Table.'
-        except:
+        except Exception as e:
+            print(e)
             self.__message = 'Row updation unsuccessfull in Referral Table.'
 
     def delete(self, ref_id: str):
@@ -32,7 +34,8 @@ class Operations:
             self.__cursor.execute(sql)
             self.__connection.commit()
             self.__message = 'Row deletion successfull in Referral Table.'
-        except:
+        except Exception as e:
+            print(e)
             self.__message = 'Row deletion unsuccessfull in Referral Table.'
 
     def getStatus(self):
