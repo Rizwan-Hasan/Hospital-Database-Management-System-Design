@@ -1,4 +1,5 @@
 class Operations:
+
     def __init__(self, db):
         self.__connection = db.getConnection()
         self.__cursor = self.__connection.cursor()

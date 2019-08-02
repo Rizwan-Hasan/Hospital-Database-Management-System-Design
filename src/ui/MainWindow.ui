@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Rizwan Hasan</author>
  <class>HospitalDB</class>
  <widget class="QWidget" name="HospitalDB">
   <property name="windowModality">
@@ -58,7 +59,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>537</width>
+     <width>511</width>
      <height>451</height>
     </rect>
    </property>

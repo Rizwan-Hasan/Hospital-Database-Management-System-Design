@@ -1,8 +1,19 @@
 class Operations:
+
     def __init__(self, db):
         self.__connection = db.getConnection()
         self.__cursor = self.__connection.cursor()
         self.__message: str = str()
+
+    def DML(self, actionType: int, ref_id: str, docName: str, docDetails: str):
+        if actionType is 0:
+            self.insert(ref_id, docName, docDetails)
+        elif actionType is 1:
+            self.update(ref_id, docName, docDetails)
+        elif actionType is 2:
+            self.delete(ref_id)
+        else:
+            self.__message = "Unknown action type"
 
     def insert(self, ref_id: str, docName: str, docDetails: str):
         try:

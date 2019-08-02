@@ -2,6 +2,7 @@
 
 import os
 import sys
+from functools import partial
 # noinspection PyUnresolvedReferences
 import resources
 
@@ -39,8 +40,9 @@ class MainWindow(QMainWindow):
 
         # Variables
         self.icon = QIcon(':/icon/icon.png')
+        self.__buttonActionSetter()
         self.MyDb.connect()
-        self.mainWindow()
+        self.__mainWindow()
 
     def showStatus(self, message: str):
         self.statusBar().styleSheet()
@@ -67,7 +69,13 @@ class MainWindow(QMainWindow):
     #     except AttributeError:
     #         pass
 
-    def mainWindow(self):
+    def __buttonActionSetter(self):
+        # Referral Table DML
+        self.pushBtn_ref_insert.clicked.connect(lambda: self.__ref_DML(0))
+        self.pushBtn_ref_update.clicked.connect(lambda: self.__ref_DML(1))
+        self.pushBtn_ref_delete.clicked.connect(lambda: self.__ref_DML(2))
+
+    def __mainWindow(self):
         self.makeWindowCenter()
         self.setWindowTitle("Hospital Patient Management System")
         self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
@@ -79,11 +87,20 @@ class MainWindow(QMainWindow):
         # for i in mycursor:
         #     print(i)
 
-        x = Bill.Operations(db=self.MyDb)
-        x.update("601", "309", "203", "100", "1600", "2019-04-21")
-        self.showStatus(x.getStatus())
-
-        self.MyDb.close()
+    def __ref_DML(self, x: int):
+        try:
+            self.pushBtn_ref_insert.clicked.disconnect()
+        except (TypeError, AttributeError):
+            pass
+        table = Referral.Operations(self.MyDb)
+        table.DML(
+            actionType=x,
+            ref_id=self.lineEdit_ref_id.text(),
+            docName=self.lineEdit_doctor.text(),
+            docDetails=self.plainTextEdit_deatils.toPlainText()
+        )
+        self.showStatus(table.getStatus())
+        self.pushBtn_ref_insert.clicked.connect(lambda: self.__pushBtn_ref_insert_Action())
 
 
 # Main Function ↓

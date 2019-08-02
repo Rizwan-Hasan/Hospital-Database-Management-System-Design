@@ -1,4 +1,5 @@
 class Operations:
+
     def __init__(self, db):
         self.__connection = db.getConnection()
         self.__cursor = self.__connection.cursor()
@@ -27,7 +28,7 @@ class Operations:
                        "WHERE bill_id = '{5}'" \
                 .format(procedure_id, patient_id, ref_id, total_cost, bill_date, bill_id)
             self.__cursor.execute(sql)
-            self.__connection.commit()
+            print(self.__connection.commit())
             self.__message = 'Row updation successfull in Bill Table.'
         except Exception as e:
             print(e)
