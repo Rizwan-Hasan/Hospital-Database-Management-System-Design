@@ -3,7 +3,7 @@ import json
 import mysql.connector as mariadb
 
 
-class OracleConn:
+class MariaDbConn:
 
     def __init__(self, appFolder: str):
         self.__connection = None
@@ -37,12 +37,9 @@ class OracleConn:
         return self.__connection
 
     def execute(self, query: str):
-        try:
-            data = self.__connection.cursor()
-            data.execute(query)
-            return data.fetchall()
-        except:
-            return -1
+        data = self.__connection.cursor()
+        data.execute(query)
+        return data.fetchall()
 
     def close(self):
         try:

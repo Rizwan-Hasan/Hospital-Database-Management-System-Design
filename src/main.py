@@ -5,7 +5,8 @@ import sys
 import resources
 
 # My Imports
-from MariaDbConnection import OracleConn
+from tables import Referral
+from MariaDbConnection import MariaDbConn
 from DatabaseCreateDrop import TableOperation
 
 # PyQt5 Imports
@@ -22,7 +23,7 @@ appFolder = os.path.dirname(os.path.realpath(sys.argv[0])) + "\\"
 
 
 class MainWindow(QMainWindow):
-    MyDb = OracleConn(appFolder)
+    MyDb = MariaDbConn(appFolder)
 
     def __init__(self):
         # noinspection PyArgumentList
@@ -40,7 +41,7 @@ class MainWindow(QMainWindow):
         self.MyDb.connect()
         self.mainWindow()
 
-    def showMsg(self, message: str):
+    def showStatus(self, message: str):
         self.statusBar().styleSheet()
         self.statusBar().showMessage(message)
 
@@ -51,24 +52,24 @@ class MainWindow(QMainWindow):
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
 
-    # def closeEvent(self, event):
-    #     try:
-    #         # noinspection PyCallByClass
-    #         buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
-    #                                            QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-    #         if buttonReply == QMessageBox.Yes:
-    #             print('Exitted')
-    #             event.accept()
-    #         else:
-    #             event.ignore()
-    #         self.show()
-    #     except AttributeError:
-    #         pass
+    def closeEvent(self, event):
+        try:
+            # noinspection PyCallByClass
+            buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
+                                               QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if buttonReply == QMessageBox.Yes:
+                print('Exitted')
+                event.accept()
+            else:
+                event.ignore()
+            self.show()
+        except AttributeError:
+            pass
 
     def mainWindow(self):
         self.makeWindowCenter()
         self.setWindowTitle("Hospital Patient Management System")
-        self.showMsg("Developed by Rizwan Hasan using Python and PyQt5")
+        self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
 
         # tableOperation = TableOperation(appFolder, self.MyDb)
         # tableOperation.create()
@@ -76,6 +77,11 @@ class MainWindow(QMainWindow):
         # mycursor = self.MyDb.execute("show databases")
         # for i in mycursor:
         #     print(i)
+
+        x = Referral.Operations(db=self.MyDb)
+        x.delete("500")
+        self.showStatus(x.getStatus())
+
         self.MyDb.close()
 
 
