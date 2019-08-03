@@ -143,14 +143,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_sex">
+       <widget class="QLineEdit" name="lineEdit_patient_sex">
         <property name="placeholderText">
          <string>Sex</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_address">
+       <widget class="QLineEdit" name="lineEdit_patient_address">
         <property name="placeholderText">
          <string>Address</string>
         </property>
@@ -663,7 +663,7 @@
   <connection>
    <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
-   <receiver>lineEdit_address</receiver>
+   <receiver>lineEdit_patient_address</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -855,7 +855,7 @@
   <connection>
    <sender>pushBtn_patient_clear</sender>
    <signal>clicked()</signal>
-   <receiver>lineEdit_sex</receiver>
+   <receiver>lineEdit_patient_sex</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
