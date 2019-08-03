@@ -557,7 +557,7 @@
       <item>
        <widget class="QLineEdit" name="lineEdit_bill_date">
         <property name="placeholderText">
-         <string>Bill date [Format: 24-FEB-19]</string>
+         <string>Bill date [Format: 2019-4-21]</string>
         </property>
        </widget>
       </item>

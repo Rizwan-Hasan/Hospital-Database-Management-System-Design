@@ -5,7 +5,18 @@ class Operations:
         self.__cursor = self.__connection.cursor()
         self.__message: str = str()
 
-    def insert(self, bill_id: str, procedure_id: str, patient_id: str, ref_id: str, total_cost: str, bill_date: str):
+    def DML(self, actionType: int, bill_id: str, procedure_id: str, patient_id: str, ref_id: str, total_cost: str,
+            bill_date: str):
+        if actionType is 0:
+            self.__insert(bill_id, procedure_id, patient_id, ref_id, total_cost, bill_date)
+        elif actionType is 1:
+            self.__update(bill_id, procedure_id, patient_id, ref_id, total_cost, bill_date)
+        elif actionType is 2:
+            self.__delete(bill_id)
+        else:
+            self.__message = "Unknown action type"
+
+    def __insert(self, bill_id: str, procedure_id: str, patient_id: str, ref_id: str, total_cost: str, bill_date: str):
         try:
             sql: str = "INSERT INTO bill  (bill_id, procedure_id, patient_id, ref_id, total_cost, bill_date) " \
                        "VALUES (%s, %s, %s, %s, %s, %s)"
@@ -17,7 +28,7 @@ class Operations:
             print(e)
             self.__message = 'Row insertion unsuccessfull in Bill Table.'
 
-    def update(self, bill_id: str, procedure_id: str, patient_id: str, ref_id: str, total_cost: str, bill_date: str):
+    def __update(self, bill_id: str, procedure_id: str, patient_id: str, ref_id: str, total_cost: str, bill_date: str):
         try:
             sql: str = "UPDATE bill SET " \
                        "procedure_id = '{0}'," \
@@ -34,7 +45,7 @@ class Operations:
             print(e)
             self.__message = 'Row updation unsuccessfull in Bill Table.'
 
-    def delete(self, bill_id: str):
+    def __delete(self, bill_id: str):
         try:
             sql: str = "DELETE FROM bill WHERE bill_id='{0}'" \
                 .format(bill_id)

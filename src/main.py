@@ -172,11 +172,12 @@ class MainWindow(QMainWindow):
         table = Bill.Operations(self.MyDb)
         table.DML(
             actionType=x,
-            procedure_id=self.lineEdit_procedure_id.text().strip(),
-            ref_id=self.lineEdit_procedure_ref_id.text().strip(),
-            patient_id=self.lineEdit_procedure_p_id.text().strip(),
-            cost=self.lineEdit_procedure_cost.text().strip(),
-            result=self.lineEdit_procedure_result.text().strip()
+            bill_id=self.lineEdit_bill_id.text().strip(),
+            procedure_id=self.lineEdit_bill_proc_id.text().strip(),
+            patient_id=self.lineEdit_bill_patient_id.text().strip(),
+            ref_id=self.lineEdit_bill_ref_id.text().strip(),
+            total_cost=self.lineEdit_bill_cost.text().strip(),
+            bill_date=self.lineEdit_bill_date.text().strip()
         )
         self.showStatus(table.getStatus())
         self.pushBtn_bill_insert.clicked.connect(lambda: self.__bill_DML(0))
