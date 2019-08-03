@@ -54,19 +54,19 @@ class MainWindow(QMainWindow):
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
 
-    # def closeEvent(self, event):
-    #     try:
-    #         # noinspection PyCallByClass
-    #         buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
-    #                                            QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-    #         if buttonReply == QMessageBox.Yes:
-    #             print('Exitted')
-    #             event.accept()
-    #         else:
-    #             event.ignore()
-    #         self.show()
-    #     except AttributeError:
-    #         pass
+    def closeEvent(self, event):
+        try:
+            # noinspection PyCallByClass
+            buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
+                                               QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if buttonReply == QMessageBox.Yes:
+                print('Exitted')
+                event.accept()
+            else:
+                event.ignore()
+            self.show()
+        except AttributeError:
+            pass
 
     def __buttonActionSetter(self):
         # Referral Table DML

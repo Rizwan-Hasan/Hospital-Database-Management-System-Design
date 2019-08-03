@@ -2,6 +2,15 @@
   <qresource prefix="icon">
     <file>icon.png</file>
   </qresource>
+  <qresource prefix="header">
+    <file>header.png</file>
+  </qresource>
+  <qresource prefix="ddl">
+    <file>ddl.png</file>
+  </qresource>
+  <qresource prefix="dml">
+    <file>dml.png</file>
+  </qresource>
   <qresource prefix="referral">
     <file>referral.png</file>
   </qresource>
