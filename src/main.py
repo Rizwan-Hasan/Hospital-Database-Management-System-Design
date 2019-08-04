@@ -1,8 +1,8 @@
 # -*-coding: UTF-8 -*-
 
 import os
-import re
 import sys
+from re import compile as regexCompile
 # noinspection PyUnresolvedReferences
 import resources
 
@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
 	def showStatus(self, message: str, x: bool = False):
 		self.statusBar().styleSheet()
 		self.statusBar().showMessage(message)
-		res = re.compile(r"\bsuccessfull\b")
+		res = regexCompile(r"\bsuccessfull\b")
 		if x is True:
 			try:
 				QMessageBox.information(self, res.findall(message)[0].capitalize(), message)
