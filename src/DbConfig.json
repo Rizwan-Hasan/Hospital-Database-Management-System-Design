@@ -1,6 +1,6 @@
 {
-  "username": "rizwan",
-  "password": "01733938633",
+  "username": "root",
+  "password": "",
   "host": "localhost",
   "port": "3306",
   "database": "hospitaldb"
