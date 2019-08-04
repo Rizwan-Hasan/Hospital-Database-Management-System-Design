@@ -1,6 +1,7 @@
 # -*-coding: UTF-8 -*-
 
 import os
+import re
 import sys
 # noinspection PyUnresolvedReferences
 import resources
@@ -43,9 +44,15 @@ class MainWindow(QMainWindow):
 		self.MyDb.connect()
 		self.__mainWindow()
 
-	def showStatus(self, message: str):
+	def showStatus(self, message: str, x: bool = False):
 		self.statusBar().styleSheet()
 		self.statusBar().showMessage(message)
+		res = re.compile(r"\bsuccessfull\b")
+		if x is True:
+			try:
+				QMessageBox.information(self, res.findall(message)[0].capitalize(), message)
+			except IndexError:
+				QMessageBox.information(self, "Unsuccessfull", message)
 
 	def makeWindowCenter(self):
 		# For launching windows in center
@@ -105,7 +112,7 @@ class MainWindow(QMainWindow):
 			docName=self.lineEdit_doctor.text().strip(),
 			docDetails=self.plainTextEdit_deatils.toPlainText().strip()
 		)
-		self.showStatus(table.getStatus())
+		self.showStatus(table.getStatus(), True)
 		self.pushBtn_ref_insert.clicked.connect(lambda: self.__ref_DML(0))
 		self.pushBtn_ref_update.clicked.connect(lambda: self.__ref_DML(1))
 		self.pushBtn_ref_delete.clicked.connect(lambda: self.__ref_DML(2))
@@ -127,7 +134,7 @@ class MainWindow(QMainWindow):
 			sex=self.lineEdit_patient_sex.text().strip(),
 			addr=self.lineEdit_patient_address.text().strip()
 		)
-		self.showStatus(table.getStatus())
+		self.showStatus(table.getStatus(), True)
 		self.pushBtn_patient_insert.clicked.connect(lambda: self.__patient_DML(0))
 		self.pushBtn_patient_update.clicked.connect(lambda: self.__patient_DML(1))
 		self.pushBtn_patient_delete.clicked.connect(lambda: self.__patient_DML(2))
@@ -149,7 +156,7 @@ class MainWindow(QMainWindow):
 			cost=self.lineEdit_procedure_cost.text().strip(),
 			result=self.lineEdit_procedure_result.text().strip()
 		)
-		self.showStatus(table.getStatus())
+		self.showStatus(table.getStatus(), True)
 		self.pushBtn_proc_insert.clicked.connect(lambda: self.__procedure_DML(0))
 		self.pushBtn_proc_update.clicked.connect(lambda: self.__procedure_DML(1))
 		self.pushBtn_proc_delete.clicked.connect(lambda: self.__procedure_DML(2))
@@ -172,7 +179,7 @@ class MainWindow(QMainWindow):
 			total_cost=self.lineEdit_bill_cost.text().strip(),
 			bill_date=self.lineEdit_bill_date.text().strip()
 		)
-		self.showStatus(table.getStatus())
+		self.showStatus(table.getStatus(), True)
 		self.pushBtn_bill_insert.clicked.connect(lambda: self.__bill_DML(0))
 		self.pushBtn_bill_update.clicked.connect(lambda: self.__bill_DML(1))
 		self.pushBtn_bill_delete.clicked.connect(lambda: self.__bill_DML(2))
