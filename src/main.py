@@ -99,8 +99,7 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle("Hospital Patient Management System")
 		self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
 
-		table = Referral.Operations(self.MyDb)
-		ddl = table.DDL(self.ddlTable)
+		Patient.Operations(self.MyDb).DDL(self.ddlTable)
 
 	def __ref_DML(self, x: int):
 		try:
