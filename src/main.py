@@ -17,9 +17,9 @@ from PyQt5 import uic
 from PyQt5 import QtGui
 from PyQt5.QtGui import QIcon, QFont, QPixmap, QMovie
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage, QStyleFactory, \
-	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange, QTableView
+	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange, QTableView, QAbstractScrollArea
 from PyQt5.QtWidgets import QFileDialog, QDesktopWidget, QTextEdit
-from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread
+from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread, Qt
 
 # Application root location ↓
 appFolder = os.path.dirname(os.path.realpath(sys.argv[0])) + "\\"
@@ -98,6 +98,21 @@ class MainWindow(QMainWindow):
 		self.makeWindowCenter()
 		self.setWindowTitle("Hospital Patient Management System")
 		self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
+
+		self.ddlTable.setRowCount(4)
+		self.ddlTable.setColumnCount(4)
+		self.ddlTable.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+		self.ddlTable.resizeColumnsToContents()
+
+		table = Referral.Operations(self.MyDb)
+		print(table.DDL())
+
+		rowPosition = 0
+		self.ddlTable.insertRow(rowPosition)
+		self.ddlTable.setItem(rowPosition, 0, QTableWidgetItem("text1"))
+		self.ddlTable.setItem(rowPosition, 1, QTableWidgetItem("text2"))
+
+
 
 	def __ref_DML(self, x: int):
 		try:
