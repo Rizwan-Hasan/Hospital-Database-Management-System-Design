@@ -50,8 +50,8 @@ class Operations:
 			# print(data[i])
 			tableView.insertRow(rowPosition)
 			for j in range(len(data[i])):
-				print(data[i][j])
-				item = QTableWidgetItem(str(data[i][j]))
+				# print(data[i][j])
+				item = QTableWidgetItem(str(data[i][j]) if type(data[i][j]) is int else data[i][j])
 				item.setFlags(Qt.ItemIsEnabled)
 				tableView.setItem(rowPosition, j, item)
 			rowPosition += 1
