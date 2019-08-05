@@ -705,28 +705,28 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="pushBtnLoadReferral">
           <property name="text">
            <string>Referral</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="pushBtnLoadPatient">
           <property name="text">
            <string>Patient</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="pushBtnLoadBill">
           <property name="text">
            <string>Bill</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="pushBtnLoadProcedure">
           <property name="text">
            <string>Procedure</string>
           </property>
