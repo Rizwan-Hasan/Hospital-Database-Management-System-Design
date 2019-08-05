@@ -5,8 +5,9 @@ import mysql.connector as mariadb
 
 class MariaDbConn:
 
-    def __init__(self, appFolder: str):
+	def __init__(self, appFolder: str, obj):
         self.__connection = None
+		self.__mainObj = obj
         with open(appFolder + 'DbConfig.json', 'r', encoding='utf-8') as file:
             self.dbConfig: dict = json.load(file)
 
@@ -20,6 +21,7 @@ class MariaDbConn:
                 passwd=self.dbConfig.get('password')
             )
             print("Connection successfull")
+			self.__mainObj.showStatus("Connection successfull")
         except Exception as e:
             print(e)
             try:
@@ -31,8 +33,10 @@ class MariaDbConn:
                     passwd=self.dbConfig.get('password')
                 )
                 print("Connection successfull")
+				self.__mainObj.showStatus("Connection successfull")
             except Exception as e:
                 print(e)
+				self.__mainObj.showStatus("Connection unsuccessfull")
                 print("Connection unsuccessfull")
 
     def getConnection(self):

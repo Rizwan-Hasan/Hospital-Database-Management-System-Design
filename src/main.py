@@ -21,7 +21,6 @@ appFolder = os.path.dirname(os.path.realpath(sys.argv[0])) + "\\"
 
 
 class MainWindow(QMainWindow):
-	MyDb = MariaDbConn(appFolder)
 
 	def __init__(self):
 		# noinspection PyArgumentList
@@ -37,6 +36,7 @@ class MainWindow(QMainWindow):
 		# Variables
 		self.icon = QIcon(':/icon/icon.png')
 		self.__buttonActionSetter()
+		self.MyDb = MariaDbConn(appFolder, self)
 		self.MyDb.connect()
 		self.__mainWindow()
 
@@ -98,7 +98,6 @@ class MainWindow(QMainWindow):
 	def __mainWindow(self):
 		self.makeWindowCenter()
 		self.setWindowTitle("Hospital Patient Management System")
-		self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
 
 	def __ref_DML(self, x: int):
 		try:
