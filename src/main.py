@@ -17,7 +17,7 @@ from PyQt5 import uic
 from PyQt5 import QtGui
 from PyQt5.QtGui import QIcon, QFont, QPixmap, QMovie
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage, QStyleFactory, \
-	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange
+	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange, QTableView
 from PyQt5.QtWidgets import QFileDialog, QDesktopWidget, QTextEdit
 from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread
 
