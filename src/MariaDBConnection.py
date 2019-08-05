@@ -28,7 +28,6 @@ class MariaDbConn:
 				self.__connection = mariadb.connect(
 					host=self.dbConfig.get('host'),
 					port=self.dbConfig.get('port'),
-					# database=self.dbConfig.get('database'),
 					user=self.dbConfig.get('username'),
 					passwd=self.dbConfig.get('password')
 				)
