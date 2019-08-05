@@ -741,39 +741,39 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushBtnLoadBill">
+            <widget class="QPushButton" name="pushBtnLoadProcedure">
           <property name="text">
-           <string>Bill</string>
+              <string>Procedure</string>
           </property>
-             <property name="icon">
-                 <iconset resource="../icons/resources.qrc">
-                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
-                 </iconset>
-             </property>
-             <property name="iconSize">
-                 <size>
-                     <width>18</width>
-                     <height>18</height>
-                 </size>
-             </property>
+                <property name="icon">
+                    <iconset resource="../icons/resources.qrc">
+                        <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                    </iconset>
+                </property>
+                <property name="iconSize">
+                    <size>
+                        <width>18</width>
+                        <height>18</height>
+                    </size>
+                </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushBtnLoadProcedure">
+            <widget class="QPushButton" name="pushBtnLoadBill">
           <property name="text">
-           <string>Procedure</string>
+              <string>Bill</string>
           </property>
-             <property name="icon">
-                 <iconset resource="../icons/resources.qrc">
-                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
-                 </iconset>
-             </property>
-             <property name="iconSize">
-                 <size>
-                     <width>18</width>
-                     <height>18</height>
-                 </size>
-             </property>
+                <property name="icon">
+                    <iconset resource="../icons/resources.qrc">
+                        <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                    </iconset>
+                </property>
+                <property name="iconSize">
+                    <size>
+                        <width>18</width>
+                        <height>18</height>
+                    </size>
+                </property>
          </widget>
         </item>
        </layout>
