@@ -1,12 +1,19 @@
+import os
 import sys
+from re import compile as regexCompile
 
 # PyQt5 Imports
-from PyQt5.QtWidgets import QApplication, QStyleFactory
+from PyQt5 import uic
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyleFactory
+from PyQt5.QtWidgets import QDesktopWidget
 
 # noinspection PyUnresolvedReferences
 import resources
+from MariaDBConnection import MariaDbConn
 # My Imports
 from main import MainWindow
+from tables import Referral, Patient, Procedure, Bill
 
 
 # Main Function ↓
