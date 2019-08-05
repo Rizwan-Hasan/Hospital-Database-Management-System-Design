@@ -20,6 +20,7 @@ class Operations:
 		else:
 			self.__message = "Unknown action type"
 
+	# noinspection DuplicatedCode
 	def DDL(self, tableView):
 		cursor = self.__connection.cursor()
 		cursor.execute('SELECT COUNT(*) as "row" FROM referral')
@@ -34,6 +35,7 @@ class Operations:
 		data = cursor.fetchall()
 
 		# Table View
+		tableView.setRowCount(0)
 		tableView.setRowCount(rowCount)
 		tableView.setColumnCount(columnCount)
 		tableView.setHorizontalHeaderLabels(columnNameList)

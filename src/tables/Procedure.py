@@ -34,7 +34,9 @@ class Operations:
 		cursor.execute('SELECT * FROM `procedure`')
 		data = cursor.fetchall()
 		print(columnCount)
+
 		# Table View
+		tableView.setRowCount(0)
 		tableView.setRowCount(rowCount)
 		tableView.setColumnCount(columnCount)
 		tableView.setHorizontalHeaderLabels(columnNameList)

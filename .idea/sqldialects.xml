@@ -2,6 +2,8 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/sql_scripts/create_script.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/src/tables/Bill.py" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/src/tables/Patient.py" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/tables/Procedure.py" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/tables/Referral.py" dialect="MariaDB" />
   </component>

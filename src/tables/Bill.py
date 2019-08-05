@@ -35,7 +35,9 @@ class Operations:
 		cursor.execute('SELECT * FROM bill')
 		data = cursor.fetchall()
 		print(columnCount)
+
 		# Table View
+		tableView.setRowCount(0)
 		tableView.setRowCount(rowCount)
 		tableView.setColumnCount(columnCount)
 		tableView.setHorizontalHeaderLabels(columnNameList)
