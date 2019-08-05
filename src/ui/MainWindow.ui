@@ -709,6 +709,17 @@
           <property name="text">
            <string>Referral</string>
           </property>
+             <property name="icon">
+                 <iconset resource="../icons/resources.qrc">
+                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                 </iconset>
+             </property>
+             <property name="iconSize">
+                 <size>
+                     <width>18</width>
+                     <height>18</height>
+                 </size>
+             </property>
          </widget>
         </item>
         <item>
@@ -716,6 +727,17 @@
           <property name="text">
            <string>Patient</string>
           </property>
+             <property name="icon">
+                 <iconset resource="../icons/resources.qrc">
+                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                 </iconset>
+             </property>
+             <property name="iconSize">
+                 <size>
+                     <width>18</width>
+                     <height>18</height>
+                 </size>
+             </property>
          </widget>
         </item>
         <item>
@@ -723,6 +745,17 @@
           <property name="text">
            <string>Bill</string>
           </property>
+             <property name="icon">
+                 <iconset resource="../icons/resources.qrc">
+                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                 </iconset>
+             </property>
+             <property name="iconSize">
+                 <size>
+                     <width>18</width>
+                     <height>18</height>
+                 </size>
+             </property>
          </widget>
         </item>
         <item>
@@ -730,6 +763,17 @@
           <property name="text">
            <string>Procedure</string>
           </property>
+             <property name="icon">
+                 <iconset resource="../icons/resources.qrc">
+                     <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png
+                 </iconset>
+             </property>
+             <property name="iconSize">
+                 <size>
+                     <width>18</width>
+                     <height>18</height>
+                 </size>
+             </property>
          </widget>
         </item>
        </layout>
