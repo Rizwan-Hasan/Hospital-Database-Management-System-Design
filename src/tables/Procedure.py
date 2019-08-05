@@ -33,7 +33,6 @@ class Operations:
 			columnNameList.append(i[0])
 		cursor.execute('SELECT * FROM `procedure`')
 		data = cursor.fetchall()
-		print(columnCount)
 
 		# Table View
 		tableView.setRowCount(0)

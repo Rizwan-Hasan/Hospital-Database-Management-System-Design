@@ -34,7 +34,6 @@ class Operations:
 			columnNameList.append(i[0])
 		cursor.execute('SELECT * FROM bill')
 		data = cursor.fetchall()
-		print(columnCount)
 
 		# Table View
 		tableView.setRowCount(0)
