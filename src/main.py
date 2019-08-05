@@ -99,20 +99,8 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle("Hospital Patient Management System")
 		self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
 
-		self.ddlTable.setRowCount(4)
-		self.ddlTable.setColumnCount(4)
-		self.ddlTable.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-		self.ddlTable.resizeColumnsToContents()
-
 		table = Referral.Operations(self.MyDb)
-		print(table.DDL())
-
-		rowPosition = 0
-		self.ddlTable.insertRow(rowPosition)
-		self.ddlTable.setItem(rowPosition, 0, QTableWidgetItem("text1"))
-		self.ddlTable.setItem(rowPosition, 1, QTableWidgetItem("text2"))
-
-
+		ddl = table.DDL(self.ddlTable)
 
 	def __ref_DML(self, x: int):
 		try:

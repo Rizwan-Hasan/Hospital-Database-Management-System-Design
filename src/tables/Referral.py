@@ -1,3 +1,8 @@
+# PyQt5 Imports
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QTableWidgetItem, QAbstractScrollArea
+
+
 class Operations:
 
 	def __init__(self, db):
@@ -15,14 +20,27 @@ class Operations:
 		else:
 			self.__message = "Unknown action type"
 
-	def DDL(self):
+	def DDL(self, tableView):
 		cursor = self.__connection.cursor()
 		cursor.execute('SELECT COUNT(*) as "row" FROM referral')
-		rowCount = cursor.fetchone()[0]
+		rowCount = int(cursor.fetchone()[0])
 		cursor.execute('SELECT COUNT(*) as "column" FROM information_schema.columns WHERE table_name = \'referral\'')
-		columnCount = cursor.fetchone()[0]
+		columnCount = int(cursor.fetchone()[0])
 		cursor.execute('SELECT doctor FROM referral')
-		return columnCount
+
+		# Table View
+		tableView.setRowCount(rowCount)
+		tableView.setColumnCount(columnCount)
+		tableView.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+		tableView.resizeColumnsToContents()
+
+		rowPosition = 0
+		tableView.insertRow(rowPosition)
+		item = QTableWidgetItem("text1")
+		item.setFlags(Qt.ItemIsEnabled)
+		tableView.setItem(rowPosition, 0, QTableWidgetItem("text1"))
+		tableView.setItem(rowPosition, 1, QTableWidgetItem("text2"))
+		tableView.setItem(rowPosition, 2, QTableWidgetItem("text3"))
 
 	def __insert(self, ref_id: str, docName: str, docDetails: str):
 		try:
