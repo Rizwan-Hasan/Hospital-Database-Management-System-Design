@@ -3,23 +3,18 @@
 import os
 import sys
 from re import compile as regexCompile
-# noinspection PyUnresolvedReferences
-import resources
-
-# My Imports
-from tables import Referral, Patient, Procedure, Bill
-from MariaDBConnection import MariaDbConn
-from DatabaseCreateDrop import TableOperation
 
 # PyQt5 Imports
-import PyQt5
 from PyQt5 import uic
-from PyQt5 import QtGui
-from PyQt5.QtGui import QIcon, QFont, QPixmap, QMovie
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage, QStyleFactory, \
-	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange, QTableView, QAbstractScrollArea
-from PyQt5.QtWidgets import QFileDialog, QDesktopWidget, QTextEdit
-from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread, Qt
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyleFactory
+from PyQt5.QtWidgets import QDesktopWidget
+
+# noinspection PyUnresolvedReferences
+import resources
+from MariaDBConnection import MariaDbConn
+# My Imports
+from tables import Referral, Patient, Procedure, Bill
 
 # Application root location ↓
 appFolder = os.path.dirname(os.path.realpath(sys.argv[0])) + "\\"
@@ -77,6 +72,12 @@ class MainWindow(QMainWindow):
 			pass
 
 	def __buttonActionSetter(self):
+		# DDL
+		self.pushBtnLoadReferral.clicked.connect(lambda: Referral.Operations(self.MyDb).DDL(self.ddlTable))
+		self.pushBtnLoadPatient.clicked.connect(lambda: Patient.Operations(self.MyDb).DDL(self.ddlTable))
+		self.pushBtnLoadProcedure.clicked.connect(lambda: Procedure.Operations(self.MyDb).DDL(self.ddlTable))
+		self.pushBtnLoadBill.clicked.connect(lambda: Bill.Operations(self.MyDb).DDL(self.ddlTable))
+
 		# Referral Table DML
 		self.pushBtn_ref_insert.clicked.connect(lambda: self.__ref_DML(0))
 		self.pushBtn_ref_update.clicked.connect(lambda: self.__ref_DML(1))
@@ -98,8 +99,6 @@ class MainWindow(QMainWindow):
 		self.makeWindowCenter()
 		self.setWindowTitle("Hospital Patient Management System")
 		self.showStatus("Developed by Rizwan Hasan using Python and PyQt5")
-
-		Patient.Operations(self.MyDb).DDL(self.ddlTable)
 
 	def __ref_DML(self, x: int):
 		try:
