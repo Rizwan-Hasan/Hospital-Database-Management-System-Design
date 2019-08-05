@@ -1,6 +1,12 @@
 # PyQt5 Imports
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QTableWidgetItem, QAbstractScrollArea
+import PyQt5
+from PyQt5 import uic
+from PyQt5 import QtGui
+from PyQt5.QtGui import QIcon, QFont, QPixmap, QMovie, QStandardItemModel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel, QPushButton, QErrorMessage, QStyleFactory, \
+	QTableWidget, QTableWidgetItem, QTableWidgetSelectionRange, QTableView, QAbstractScrollArea
+from PyQt5.QtWidgets import QFileDialog, QDesktopWidget, QTextEdit
+from PyQt5.QtCore import pyqtSlot, QSize, pyqtSignal, QThread, Qt
 
 
 class Operations:
@@ -26,11 +32,13 @@ class Operations:
 		rowCount = int(cursor.fetchone()[0])
 		cursor.execute('SELECT COUNT(*) as "column" FROM information_schema.columns WHERE table_name = \'referral\'')
 		columnCount = int(cursor.fetchone()[0])
-		cursor.execute('SELECT doctor FROM referral')
+		cursor.execute('SELECT * FROM referral')
+		data = cursor.fetchall()
 
 		# Table View
 		tableView.setRowCount(rowCount)
 		tableView.setColumnCount(columnCount)
+		tableView.setHorizontalHeaderLabels(['ID', 'Name', 'Details'])
 		tableView.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
 		tableView.resizeColumnsToContents()
 
