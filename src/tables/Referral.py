@@ -32,23 +32,29 @@ class Operations:
 		rowCount = int(cursor.fetchone()[0])
 		cursor.execute('SELECT COUNT(*) as "column" FROM information_schema.columns WHERE table_name = \'referral\'')
 		columnCount = int(cursor.fetchone()[0])
+		cursor.execute('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME=\'referral\'')
+		columnNameList: list = list()
+		for i in cursor.fetchall():
+			columnNameList.append(i[0])
 		cursor.execute('SELECT * FROM referral')
 		data = cursor.fetchall()
 
 		# Table View
 		tableView.setRowCount(rowCount)
 		tableView.setColumnCount(columnCount)
-		tableView.setHorizontalHeaderLabels(['ID', 'Name', 'Details'])
-		tableView.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-		tableView.resizeColumnsToContents()
+		tableView.setHorizontalHeaderLabels(columnNameList)
+		# tableView.resizeColumnsToContents()
 
-		rowPosition = 0
-		tableView.insertRow(rowPosition)
-		item = QTableWidgetItem("text1")
-		item.setFlags(Qt.ItemIsEnabled)
-		tableView.setItem(rowPosition, 0, QTableWidgetItem("text1"))
-		tableView.setItem(rowPosition, 1, QTableWidgetItem("text2"))
-		tableView.setItem(rowPosition, 2, QTableWidgetItem("text3"))
+		rowPosition: int = 0
+		for i in range(len(data)):
+			# print(data[i])
+			tableView.insertRow(rowPosition)
+			for j in range(len(data[i])):
+				print(data[i][j])
+				item = QTableWidgetItem(str(data[i][j]))
+				item.setFlags(Qt.ItemIsEnabled)
+				tableView.setItem(rowPosition, j, item)
+			rowPosition += 1
 
 	def __insert(self, ref_id: str, docName: str, docDetails: str):
 		try:
