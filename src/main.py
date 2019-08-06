@@ -60,7 +60,7 @@ class MainWindow(QMainWindow):
 	def closeEvent(self, event):
 		try:
 			# noinspection PyCallByClass
-			buttonReply = QMessageBox.question(self, 'Message', "Do you really want to exit?",
+			buttonReply = QMessageBox.question(self, 'Message', "Exit?",
 											   QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 			if buttonReply == QMessageBox.Yes:
 				print('Exitted')
