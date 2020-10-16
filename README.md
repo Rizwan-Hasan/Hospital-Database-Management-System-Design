@@ -1,1 +1,1 @@
-# Hospital-Database-Assignment
+# Hospital Database Management System Design
